@@ -1,0 +1,59 @@
+*{
+/* border: 1px solid red;  */
+}
+body{
+    display: flex;
+    flex-direction: column;
+    padding:0;
+    margin:0;
+}
+.logo{
+    height:60px
+}
+
+.main-bg{
+    display:flex;
+    justify-content: center;
+    width:110%;
+   
+ 
+}
+.index{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.quote{
+    font-family:"Sofia",sans-serif;
+    position: absolute;
+    top:25vh;
+    width: 50vw;
+    font-size:25pt;
+    color:white;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 9px;
+    rotate: 2deg;
+    
+}
+
+.index-img{
+    z-index: -1;
+
+}
+.footquote{
+    color:rgba(255, 255, 255, 0.61)
+}
+.profile-header{
+    margin-top: 8vh;
+    height: 60px;
+}
+
+.auth{
+    display:flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+.create{
+    margin-right:20vw;
+    margin-left:20vw;
+}

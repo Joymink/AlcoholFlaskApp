@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="../static/css/main.css">
+<title>Alcohol Activists</title>
+</head>
+<body>
+    <nav class="navbar bg-dark navbar-dark navbar-expand-sm fixed-top">
+        <div class="container-fluid d-flex ">
+            <div class="d-flex flex-column align-items-center justify-content-center">
+                <a href="{{ url_for('site.home') }}" class="navbar-brand">
+                    <img src="../static/images/logo.jpg" alt="logo" class="rounded-pill logo">
+                </a>
+                <div class="text-white">AlcoholActivists</div>
+            </div>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse h4" id="navmenu">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ url_for('site.profile') }}">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Beverages</a>
+                        <ul class="dropdown-menu bg-secondary nav-item-light">
+                          <li><a class="dropdown-item" href="#">Spirits</a></li>
+                          <li><a class="dropdown-item" href="#">Whiskey</a></li>
+                          <li><a class="dropdown-item" href="#">Tequilla</a></li>
+                          <li><a class="dropdown-item" href="#">Vodka</a></li>
+                          <li><a class="dropdown-item" href="#">Mixed</a></li>
+                        </ul>
+                      </li>
+                    {% if current_user.is_authenticated %}  
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ url_for('auth.logout') }}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ url_for('auth.signin') }}">Sign In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('auth.signup') }}">Sign Up</a>
+                    </li>
+                    {% endif %}
+                  </ul>
+            </div>
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock %}  
+    
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+<footer class="bg-dark fixed-bottom text-light d-flex justify-content-center">
+    &copy2023 Jayden Evans
+</footer>
+</html>
